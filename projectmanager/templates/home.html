@@ -1,0 +1,110 @@
+
+
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="content-flex">
+    {% if user.is_authenticated %}
+    <div class="project_list">
+       <h5>Projects</h5>
+       <hr>
+        {% if user.is_authenticated %}
+            {% for project in overall_projects %}
+                {% if project.completed != True %}
+                <div class="ind_projects">
+                    <div>{{ project.project_title }} </div>
+                        <div> 
+                        <a class="project_icons" href="{% url 'complete_project' project.id %}">&#10003;</a>
+                        <a class="project_icons" href="{% url 'delete_project' project.id %}">&#10005;</a> 
+                        </div>
+                </div>
+                <hr>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        <br>
+        <hr>
+            <div class="add_new_project">
+                <button class="btn btn-secondary">
+                    <a href="{% url 'add_project' %}"> Add New Project</a>
+                </button>
+            </div>
+    </div>
+            <div class="task-list">
+                <h5>Task List Header</h5>
+                <hr>
+                {% for project in projects %}
+                {% if project.completed != True %} 
+                <div class="task-card">
+                    <div class="task-card-header" onclick="collapse()">
+                    <i style="font-size:24px" class="fa open" id="open_btn">&#xf107;</i>
+                    <h6>{{project}}</h6>
+                    </div>
+                <hr>
+                <div class="task_container">
+                    {% for task in tasks %}
+                        {% if task.completed == False %}
+                            {% if task.project|stringformat:'s' == project|stringformat:'s' %}
+                        <div class="task-contents">
+                    <!-- <div class="task_header_container"></div> -->
+                    <div class="task_description">{{task.description}}</div>
+                    <div class="task_footer">
+                        <div> <a href="{% url 'completeTask' task.id %}">Complete</a></div>
+                        <div>Due: {{task.due_date}}</div>
+                        <div>|</div>
+                        <div>Time Remaining: {{task.due_date|timeuntil}}</div>
+                        <div> <a href=" {% url 'deleteTask' task.id %}">Delete</a></div>
+
+                    </div>
+                        </div>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            
+                <div class="add_new_project">
+                    <button class="btn btn-secondary">
+                        <a href="{% url 'add_task' %}"> Add New Tasks</a>
+                    </button>
+                </div>
+            </div>
+
+            <div class="task-completion">
+                <h5>Completed Tasks</h5>
+             <hr>
+                {% for task in completed_tasks %}
+                {% if task.completed == True %}
+                <div class="completed-task-contents">
+                    <div class="completed_task_description">{{task.description}}</div>
+                    <div class="completed_task_footer">
+                        <div>This task was completed {{task.date_completed|timesince}} ago </div>
+
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+                
+             </div>
+
+             <br>
+
+</div>       
+            {% else %}
+            
+            <div class="splash-flex">
+                <div class="splash-screen">
+                    <h3>Welcome to ProjectManager</h3>
+                    <h4>Sign up to get started</h4>
+                        <div>
+                    <button class="btn btn-secondary"><a href="{% url 'loginUser' %}">Login</a></button>
+                    <button class="btn btn-secondary"><a href="{% url 'registerUser' %}">Register</a></button>
+                        </div>
+                </div>
+            </div>
+    {% endif %}
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="new_project_form_header">  Fill out the form below to add a new project </div>
+<div class="new_project_form">
+    <div class="project-form-wrapper">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</div>
+{% endblock content%}

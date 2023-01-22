@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="content-flex-register">
+    {% if page == 'login' %}
+    
+    <div class="new_register_form_header">  Login Below </div>
+    <br>
+        <div class="new_register_form">
+            <div class="login-register-form">
+                <form class ="form-group" method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input type="submit" value="Login"> 
+                    
+                </form>
+                {% if messages %}
+                {% for message in messages %}
+                    <ul>
+                        <div class="alert alert-danger"> {{message}}</div>
+                    </ul>
+                {% endfor %}
+            {% endif %}
+                <br>
+                <a href="{% url 'registerUser' %}">Haven't Registed Yet? Click here to Register</a>
+            </div>
+        </div>
+
+    {% else %}
+
+    <div class="new_register_form_header">  Fill out the form below to register </div>
+    <br>
+        <div class="new_register_form">
+            <div class="login-register-form">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <input type="submit" value="Register">
+                </form>
+                <br>
+                <a href="{% url 'loginUser' %}">Already Registered? Click here to Login</a>
+            </div>
+        </div>
+
+        {% endif %}
+</div>
+{% endblock content%}

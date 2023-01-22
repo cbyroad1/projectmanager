@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+<div class="delete_project_form">
+    <div class="delete-form-wrapper">
+        {% if page == 'deleteProject' %}
+        <h4>  Are you sure you want to delete the project: {{project.title}}</h4>
+        {% else %}
+        <h4>  Are you sure you want to delete the task: "{{task.description}}" </h4>
+        {% endif %}
+        <div class="btn-wrapper">
+            <Form method="POST">
+                    {% csrf_token %}
+                <button>Yes</button>
+            </Form>
+                <button> <a href="{% url 'home' %}">No</a></button>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,378 @@
+
+.btn a{
+    text-decoration: none;
+    color: white;
+}
+
+
+/* For the NavBar */
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex: 1 1 0;
+    padding-right: 50px;
+    margin-top: 25px;
+    padding-top: 25px;
+    
+}
+
+.flex-container a{
+    color: #63666a;
+    font-weight: bold;
+    font-size: larger;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+.flex-container h4{
+    font-size: x-large;
+    color: #63666a;
+    font-weight: bold;
+}
+
+.navbar-brand{
+    font-size: 50px;
+}
+
+
+
+
+/* For the Content Section */
+
+.content-flex{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    height: max-content;
+    margin-bottom: 100px;
+}
+
+.content-flex h3{
+    color: #63666a;
+}
+
+.content-flex li{
+    color: #63666a;
+    list-style-type: none;
+}
+
+.content-flex input{
+    margin-right: 10px;
+}
+
+
+/* for the Splash screen (accessing without being logged in */
+
+.splash-flex{
+    height: 100vh;
+}
+
+.splash-screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 50px;
+    border: 3px solid #ffffff;
+    border-radius: 15px;
+    border-style: groove;
+    height: min-content;
+}
+
+.splash-screen h3{
+    margin: 10px;
+}
+
+.splash-screen h4{
+    margin: 10px;
+}
+
+.splash-screen button{
+    margin: 10px;
+}
+
+/* Project List Section */
+
+.project_list{
+    background-color: #ffffff;
+    padding: 20px;
+    border: 3px solid #ffffff;
+    border-radius: 15px;
+    border-style: groove;
+}
+
+
+.project_list a{
+    margin-left: 10px;
+}
+
+.project_list h5{
+    text-align: center;
+}
+
+.ind_projects{
+    text-align: center;
+}
+
+.add_new_project{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* New Project Form */
+
+.new_project_form_header{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.project-form-wrapper{
+    background-color: #f1f1f1;
+    border: 3px solid #f1f1f1;
+    border-radius: 15px;
+    border-style: groove;
+    padding: 25px;
+    box-shadow: 5px 5px gray;
+
+}
+
+.new_project_form{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* New User Register Form */
+
+.content-flex-register{
+    
+    height: 100vh;
+
+}
+
+
+.new_register_form_header{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.new_register_form{
+    display: flex;
+    justify-content: center;
+}
+
+.login-register-form{
+    background-color: #f1f1f1;
+    border: 3px solid #f1f1f1;
+    border-radius: 15px;
+    border-style: groove;
+    padding: 25px;
+    box-shadow: 5px 5px gray;
+
+}
+
+.alert{
+    width: 20vw;
+}
+
+
+
+/* Delete Project Page */
+
+.delete_project_form{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    height: 100vh;
+}
+
+.delete-form-wrapper{
+    background-color: #f1f1f1;
+    border: 3px solid #f1f1f1;
+    border-radius: 15px;
+    border-style: groove;
+    padding: 25px;
+    box-shadow: 5px 5px gray;
+    height: min-content;
+
+}
+
+.btn-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-wrapper button{
+    margin: 10px;
+}
+
+/* Complete Project Page */
+
+.complete_project_form{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    height: 100vh;
+}
+
+.complete-form-wrapper{
+    background-color: #f1f1f1;
+    border: 3px solid #f1f1f1;
+    border-radius: 15px;
+    border-style: groove;
+    padding: 25px;
+    box-shadow: 5px 5px gray;
+    height: min-content;
+
+}
+
+.complete-form-wrapper h5{
+    text-align: center;
+}
+
+.btn-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-wrapper button{
+    margin: 10px;
+}
+
+
+/* Task List Section (Home) */
+.task-list{
+    background-color: #ffffff;
+    padding: 20px;
+    border: 3px solid #ffffff;
+    border-radius: 15px;
+    border-style: groove;
+    width: 50vw;
+    text-align: left;
+    box-shadow: 5px 5px gray;
+}
+
+.task-list h5{
+    text-align: center;
+}
+
+.task_header_container{
+    margin-bottom: 5px;
+}
+
+.task_header_container h6{
+    font-size: small;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+.task_header_container small{
+    margin-left: 15px;
+    font-style: italic;
+    font-size: smaller;
+    font-weight: lighter;
+}
+
+.task_description{
+    font-size: smaller;
+    font-style: italic;
+    margin-top: 0px;
+
+}
+
+.task_footer{
+    font-size: x-small;
+    display: flex;
+}
+
+
+
+.task-card-header{
+    display: flex;
+}
+
+.task-card-header h6{
+    margin-left: 10px;
+}
+
+.task-card{
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 1px 1px black;
+    padding: 15px;
+    margin: 15px;
+}
+
+
+.disabled{
+    display: none;
+    transition: all 2s;
+
+}
+
+.task-contents{
+    border: 1px solid black;
+    border-radius: 25px;
+    margin: 5px;
+    padding: 5px;
+    text-align: left;
+}
+
+.task-contents div{
+    text-align: left;
+    margin-left: 20px;
+}
+
+
+/* Third Section at Right */
+
+.task-completion h5{
+    text-align: center;
+}
+
+.task-completion{
+    background-color: #ffffff;
+    padding: 20px;
+    border: 3px solid #ffffff;
+    border-radius: 15px;
+    border-style: groove;
+    width: 300px;
+}
+
+.completed-task-contents{
+    border: 1px solid black;
+    border-radius: 25px;
+    margin: 5px;
+    padding: 10px;
+    text-align: left;
+}
+
+
+.completed_task_description{
+    font-size: smaller;
+    font-style: italic;
+    margin-top: 0px;
+
+}
+
+.completed_task_footer{
+    font-size: x-small;
+    display: flex;
+}
+
+
+/*  Footer Section */
+
+.bottom-section{
+    display: block;
+    background-color: #f1f1f1;
+    width: 75vw;
+    border-radius: 15;
+    border-style: groove;
+    border: 3px;
+
+}

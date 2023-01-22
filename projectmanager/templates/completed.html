@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+<div class="complete_project_form">
+    <div class="complete-form-wrapper">
+        {% if page == 'completeProject' %}
+        <h4>  Are you sure you want to complete the project: "{{project.title}}"? </h4>
+        <h5>  This project has a due date of: {{project.due_date}}</h5>
+        {% elif page == 'completeTask' %}
+        <h4>  Are you sure you want to complete the task: "{{task.description}}" for the project: "{{task.project}}"? </h4>
+        <h5>  This task has a due date of: {{task.due_date}}</h5>
+        {% endif %}
+        <div class="btn-wrapper">
+            <Form method="POST">
+                    {% csrf_token %}
+                <button>Yes</button>
+            </Form>
+                <button> <a href="{% url 'home' %}">No</a></button>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
